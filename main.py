@@ -8,8 +8,16 @@ def get_headlines():
 
     headlines = []
 
+    links = soup.find_all("a") # all codes with tag "a"
+
+    for link in links:
+      header = link.find("h3") # h3 = headlines finding out of a tags
+      if headline != None:
+        print(headline.text)
+
     return headlines
-    
+ 
+  
 def get_links():
 
     r = urllib.request.urlopen("https://www.nytimes.com/")  # returns html of the website
